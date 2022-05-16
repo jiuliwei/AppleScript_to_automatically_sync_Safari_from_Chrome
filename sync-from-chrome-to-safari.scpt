@@ -21,7 +21,7 @@ tell application "System Events" to tell application process "Safari"
 	keystroke "f"
 	key code 125
 	key down {shift}
-	repeat 20 times -- assume at most 20 bookmarks
+	repeat 20 times -- assume at most 20 bookmarks, but can be modified
 		key code 125
 	end repeat
 	key up {shift}
