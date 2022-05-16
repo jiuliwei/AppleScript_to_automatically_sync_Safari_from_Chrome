@@ -3,10 +3,10 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
 
 This script fixes [Aneureka's sync-from-chrome-to-safari](https://gist.github.com/Aneureka/41e4ee6ecb797bc97d20a44927d3dcbe) and adds new functionality to reset bookmarks
 
-# run this line in the terminal to edit your user crontab
+Run this line in the terminal to edit your user crontab
 crontab -e
 
-# Add this line to run every day at 4 o'clock
+Add this line to run every day at 4 o'clock
 0 4 * * * osascript /path/to/your/sync-from-chrome-to-safari.scpt
 
-# [Here is an example of setting up automated tasks/jobs in macOS & Linux](https://towardsdatascience.com/a-step-by-step-guide-to-scheduling-tasks-for-your-data-science-project-d7df4531fc41#:~:text=towardsdatascience.com-,cron%20for%20Linux/macOS,-In%20macOS%2C%20you)
+[Here is an example of setting up automated tasks/jobs in macOS & Linux](https://towardsdatascience.com/a-step-by-step-guide-to-scheduling-tasks-for-your-data-science-project-d7df4531fc41#:~:text=towardsdatascience.com-,cron%20for%20Linux/macOS,-In%20macOS%2C%20you)
