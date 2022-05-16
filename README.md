@@ -18,7 +18,9 @@ crontab -e
 ```
 0 4 * * * osascript /path/to/your/sync-from-chrome-to-safari.scpt
 ```
-[*Here is the Instrucation of crontab:*](https://en.wikipedia.org/wiki/Cron)
+*Tips:*
+
+- [*Here is the Instrucation of crontab:*](https://en.wikipedia.org/wiki/Cron)
 ```
 # ┌───────────── minute (0 - 59)
 # │ ┌───────────── hour (0 - 23)
@@ -30,4 +32,4 @@ crontab -e
 # │ │ │ │ │
 # * * * * * <command to execute>
 ```
-*Here is an [example](https://towardsdatascience.com/a-step-by-step-guide-to-scheduling-tasks-for-your-data-science-project-d7df4531fc41#:~:text=towardsdatascience.com-,cron%20for%20Linux/macOS,-In%20macOS%2C%20you) of setting up automated tasks/jobs in macOS & Linux.*
+- *Here is an [example](https://towardsdatascience.com/a-step-by-step-guide-to-scheduling-tasks-for-your-data-science-project-d7df4531fc41#:~:text=towardsdatascience.com-,cron%20for%20Linux/macOS,-In%20macOS%2C%20you) of setting up automated tasks/jobs in macOS & Linux.*
