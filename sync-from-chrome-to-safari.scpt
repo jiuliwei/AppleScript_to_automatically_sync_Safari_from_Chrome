@@ -21,14 +21,22 @@ tell application "System Events" to tell application process "Safari"
 	keystroke "f"
 	key code 125
 	key down {shift}
-	repeat 20 times -- assume at most 20 bookmarks, but can be modified
+	repeat 20 times -- assume at most 20 bookmarks
 		key code 125
 	end repeat
 	key up {shift}
 	key code 51
+end tell
 
-	delay 5
+-- close safari
+do shell script "killall Safari || echo \"Safari is not running.\""
 
+delay 5
+
+do shell script "killall Safari || echo \"Safari is not running.\""
+tell application "Safari" to activate
+
+tell application "System Events" to tell application process "Safari"
 	-- Import from chrome
 	log "Syncing..."
 	tell menu item "Import From" of menu "File" of menu bar item "File" of menu bar 1
