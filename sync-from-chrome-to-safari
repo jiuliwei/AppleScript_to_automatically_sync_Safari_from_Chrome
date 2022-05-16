@@ -1,5 +1,0 @@
-# run this line in the terminal
-crontab -e
-
-# Add this line to run every day at 4 o'clock
-0 4 * * * osascript /path/to/your/sync-from-chrome-to-safari.scpt
