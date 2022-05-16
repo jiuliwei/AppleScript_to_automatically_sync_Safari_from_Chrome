@@ -6,7 +6,7 @@ tell application "Safari" to activate
 
 tell application "System Events" to tell application process "Safari"
 	delay 0.5
-	log "Syncing..."
+	log "Resetting..."
 
 	-- Open bookmarks
 	tell menu 1 of menu bar item "Bookmarks" of menu bar 1
@@ -44,13 +44,13 @@ tell application "System Events" to tell application process "Safari"
 			click menu item 1
 		end tell
 	end tell
-	tell window "Bookmarks"
+	tell window "Start Page"
 		tell sheet 1
 			click UI Element "Import"
 		end tell
 	end tell
 	delay 5
-	tell window "Bookmarks"
+	tell window "Start Page"
 		tell sheet 1
 			click UI Element "OK"
 		end tell
