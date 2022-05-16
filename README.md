@@ -15,7 +15,7 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
 ```
 crontab -e
 ```
-- Add this line to run every day at 4 o'clock:<br />
+- Add this line to run every day at 4 o'clock([instrucation](https://en.wikipedia.org/wiki/Cron)):
 ```
 0 4 * * * osascript /path/to/your/sync-from-chrome-to-safari.scpt
 ```
