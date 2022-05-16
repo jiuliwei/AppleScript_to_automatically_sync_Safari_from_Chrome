@@ -19,7 +19,7 @@ crontab -e
 ```
 0 4 * * * osascript /path/to/your/sync-from-chrome-to-safari.scpt
 ```
-- [Instrucation of crontab](https://en.wikipedia.org/wiki/Cron)
+- [Instrucation of crontab:](https://en.wikipedia.org/wiki/Cron)
 ```
 # ┌───────────── minute (0 - 59)
 # │ ┌───────────── hour (0 - 23)
