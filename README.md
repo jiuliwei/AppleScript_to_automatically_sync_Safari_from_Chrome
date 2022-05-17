@@ -7,6 +7,33 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
 # Solution
 - This script first resets safari bookmarks to empty, and then imports bookmarks, passwords and history from chrome.
 - I assumed the maximum number of bookmarks to delete in the root directory is 20, but you can modify it.
+```
+<key>StartCalendarInterval</key>
+  <dict>
+      <key>Hour</key>
+      <integer>4</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+  </dict>
+```
+
+```
+<key>ProgramArguments</key> 
+  <array> 
+    <string>/usr/bin/osascript</string> 
+    <string>the path to sync-from-chrome-to-safari.scpt</string>
+  </array> 
+```
+
+- You should 
+```
+-- wake the computer
+do shell script "caffeinate -u -t 3"
+tell application "System Events"
+	keystroke "<your_password>"
+	keystroke return
+end tell
+```
 
 # Automation
 Because I want to automatically sync bookmarks every night, but at this point my mac's lid is closed. The [cron](https://en.wikipedia.org/wiki/Cron) is unusable when the lid is closed. Therefore, I decided to use [launchd](https://medium.com/swlh/how-to-use-launchd-to-run-services-in-macos-b972ed1e352) to do the automation.
