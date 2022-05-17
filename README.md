@@ -9,7 +9,7 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
 - I assumed the maximum number of bookmarks to delete in the root directory is 20, but you can modify it.
 
 # Automation
-- The [cron](https://en.wikipedia.org/wiki/Cron) is unusable when the lid is closed. Therefore, I decided to use [launchd](https://davidhamann.de/2018/03/13/setting-up-a-launchagent-macos-cron/) to do the automation.
+- Because I want to automatically sync bookmarks every night, but at this point my mac's lid is closed. The [cron](https://en.wikipedia.org/wiki/Cron) is unusable when the lid is closed. Therefore, I decided to use [launchd](https://medium.com/swlh/how-to-use-launchd-to-run-services-in-macos-b972ed1e352) to do the automation.
 - Move the **local.sync.plist** file to **/Users/<your_user_name>/Library/LaunchAgents**.
 - Run this line in the terminal to get **your-user-id**
 ```
