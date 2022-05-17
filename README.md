@@ -15,7 +15,7 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
 ```
 id -u
 ```
-- Run this line in the terminal:
+- Then run this line to move to the LaunchAgents folder:
 ```
 cd ~/Library/LaunchAgents/
 ```
