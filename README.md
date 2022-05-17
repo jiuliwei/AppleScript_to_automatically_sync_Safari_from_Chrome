@@ -10,7 +10,7 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
 
 # Automation
 - The [cron](https://en.wikipedia.org/wiki/Cron) is unusable when the lid is closed. Therefore, I decided to use [launchd](https://davidhamann.de/2018/03/13/setting-up-a-launchagent-macos-cron/) to do the automation.
-- Move the **local.sync.plist** file to /Users/<your_user_name>/Library/LaunchAgents
+- Move the **local.sync.plist** file to **/Users/<your_user_name>/Library/LaunchAgents**.
 - Run this line in the terminal to get **your-user-id**
 ```
 id -u
