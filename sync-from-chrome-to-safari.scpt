@@ -1,23 +1,30 @@
+-- Reset bookmarks --
+
+-- wake the computer
+do shell script "caffeinate -u -t 3"
+tell application "System Events"
+	keystroke "<your_password>"
+	keystroke return
+end tell
+
 -- close google chrome to perform importing 
 do shell script "killall \"Google Chrome\" || echo \"Google Chrome is not running.\""
 
+-- open safari
 do shell script "killall Safari || echo \"Safari is not running.\""
 tell application "Safari" to activate
 
+-- reset the bookmarks to empty
 tell application "System Events" to tell application process "Safari"
-	delay 0.5
+	delay 2
 	log "Resetting..."
 
-	-- Open bookmarks
-	tell menu 1 of menu bar item "Bookmarks" of menu bar 1
-		click menu item "Edit Bookmarks"
-	end tell
+	-- open bookmarks
+	click menu item "Edit Bookmarks" of menu 1 of menu bar item "Bookmarks" of menu bar 1
 	delay 2
-	tell window "Bookmarks"
-		click UI Element 3 of UI Element 1 of row 1 of outline 1 of scroll area 1 of group 1 of tab group 1 of splitter group 1
-	end tell
+	click UI Element 3 of UI Element 1 of row 1 of outline 1 of scroll area 1 of group 1 of tab group 1 of splitter group 1 of window "Bookmarks"
 	
-	-- Delete all bookmarks
+	-- delete all bookmarks
 	keystroke "f"
 	key code 125
 	key down {shift}
@@ -25,46 +32,56 @@ tell application "System Events" to tell application process "Safari"
 		key code 125
 	end repeat
 	key up {shift}
+	delay 1
 	key code 51
+	delay 3
 end tell
 
 -- close safari
-do shell script "killall Safari || echo \"Safari is not running.\""
+tell application "Safari" to quit
+delay 2
 
-delay 5
+-- reopen safari to make sure bookmarks is empty
+tell application "Safari" to activate
+delay 2
+tell application "Safari" to quit
+delay 2
 
-do shell script "killall Safari || echo \"Safari is not running.\""
+-- sleep
+tell application "Finder" to sleep
+delay 3
+
+
+
+
+
+-- Import from chrome --
+
+-- wake the computer
+do shell script "caffeinate -u -t 3"
+tell application "System Events"
+	keystroke "<your_password>"
+	keystroke return
+end tell
+
+-- open safari
 tell application "Safari" to activate
 
+-- import from chrome
 tell application "System Events" to tell application process "Safari"
-	-- Import from chrome
+	delay 2
 	log "Syncing..."
-	tell menu item "Import From" of menu "File" of menu bar item "File" of menu bar 1
-		tell menu "Import From"
-			click menu item 1
-		end tell
-	end tell
-	tell window "Start Page"
-		tell sheet 1
-			click UI Element "Import"
-		end tell
-	end tell
+	click menu item 1 of menu 1 of menu item "Import From" of menu 1 of menu bar item "File" of menu bar 1
+	delay 2
+	click UI Element "Import" of sheet 1 of window "Start Page"
 	delay 5
-	tell window "Start Page"
-		tell sheet 1
-			click UI Element "OK"
-		end tell
-	end tell
-
-	delay 3
+	click UI Element "OK" of sheet 1 of window "Start Page"
+	delay 5
 	log "Complete sync"
 end tell
 
-
 -- close safari
-do shell script "killall Safari || echo \"Safari is not running.\""
+tell application "Safari" to quit
 
--- restore chrome closed tabs and minimize window in background
--- delay 0.5
--- log "Opening chrome in background"
--- do shell script "open -a \"Google Chrome\" --args --restore-last-session --no-startup-window"
+-- sleep
+tell application "Finder" to sleep
