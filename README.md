@@ -12,7 +12,7 @@ repeat 20 times -- assume at most 20 bookmarks
 	key code 125
 end repeat
 ```
-- The program needs to input the password to unlock the mac. You should replace **<your_password>** with your own user password in **sync-from-chrome-to-safari.scpt** file.
+- The program needs to input the password to unlock the mac. You should replace `<your_password>` with your own user password in **sync-from-chrome-to-safari.scpt** file.
 ```
 -- wake the computer
 do shell script "caffeinate -u -t 3"
