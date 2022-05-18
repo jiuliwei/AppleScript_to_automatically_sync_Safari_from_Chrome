@@ -25,7 +25,7 @@ end tell
 # Automation
 Because I want to automatically sync bookmarks every night, but at this point my mac's lid is closed. The [cron](https://en.wikipedia.org/wiki/Cron) is unusable when the lid is closed. Therefore, I decided to use [launchd](https://medium.com/swlh/how-to-use-launchd-to-run-services-in-macos-b972ed1e352) to do the automation.
 
-1. You should replace **the path to sync-from-chrome-to-safari.scpt** with your own path in **local.sync.plist** file.
+1. You should replace `the path to sync-from-chrome-to-safari.scpt` with your own path in **local.sync.plist** file.
 ```
 <key>ProgramArguments</key> 
   <array> 
