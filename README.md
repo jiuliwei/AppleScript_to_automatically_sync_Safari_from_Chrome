@@ -29,7 +29,7 @@ end tell
     <string>the path to sync-from-chrome-to-safari.scpt</string>
   </array> 
 ```
-- You can change the time it runs in **local.sync.plist** file.
+- I set it to run daily at 4 am. You can change the time it runs in **local.sync.plist** file.
 ```
 <key>StartCalendarInterval</key>
   <dict>
