@@ -56,7 +56,8 @@ cd ~/Library/LaunchAgents/
 ```
 launchctl bootstrap gui/<your-user-id> local.sync.plist
 ```
-5. Unloading an agent is as easy as:
+5. Now everything is ok.
+5. If you modify the files, remember to unload the agent and then load it:
 ```
 launchctl bootout gui/<your-user-id> local.sync.plist
 ```
