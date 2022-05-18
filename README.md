@@ -6,7 +6,7 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
 
 # Solution
 - This script first resets safari bookmarks to empty, and then imports bookmarks, passwords and history from chrome.
-- I assumed the maximum number of bookmarks to delete in the root directory is 20, but you can modify it.
+- I assumed the maximum number of bookmarks to delete in the root directory is 20, but you can modify it in **local.sync.plist** file.
 ```
 <key>StartCalendarInterval</key>
   <dict>
@@ -16,7 +16,7 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
       <integer>0</integer>
   </dict>
 ```
-
+- You should replace **the path to sync-from-chrome-to-safari.scpt** with your own path in **local.sync.plist** file.
 ```
 <key>ProgramArguments</key> 
   <array> 
@@ -24,8 +24,7 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
     <string>the path to sync-from-chrome-to-safari.scpt</string>
   </array> 
 ```
-
-- You should 
+- You should replace **<your_password>** with your own user password in **sync-from-chrome-to-safari.scpt** file.
 ```
 -- wake the computer
 do shell script "caffeinate -u -t 3"
