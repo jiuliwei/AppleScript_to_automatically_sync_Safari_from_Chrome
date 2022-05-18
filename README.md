@@ -57,7 +57,7 @@ cd ~/Library/LaunchAgents/
 launchctl bootstrap gui/<your-user-id> local.sync.plist
 ```
 7. Now everything is ok.
-8. If you want to modify the files, remember to unload the agent and then load it:
+8. If you want to modify, remember to unload the agent and then load it again:
 ```
 launchctl bootout gui/<your-user-id> local.sync.plist
 ```
