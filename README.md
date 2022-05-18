@@ -21,7 +21,11 @@ tell application "System Events"
 	keystroke return
 end tell
 ```
-- You should replace **the path to sync-from-chrome-to-safari.scpt** with your own path in **local.sync.plist** file.
+
+# Automation
+Because I want to automatically sync bookmarks every night, but at this point my mac's lid is closed. The [cron](https://en.wikipedia.org/wiki/Cron) is unusable when the lid is closed. Therefore, I decided to use [launchd](https://medium.com/swlh/how-to-use-launchd-to-run-services-in-macos-b972ed1e352) to do the automation.
+
+1. You should replace **the path to sync-from-chrome-to-safari.scpt** with your own path in **local.sync.plist** file.
 ```
 <key>ProgramArguments</key> 
   <array> 
@@ -29,7 +33,7 @@ end tell
     <string>the path to sync-from-chrome-to-safari.scpt</string>
   </array> 
 ```
-- I set it to run daily at 4 am. You can change the time it runs in **local.sync.plist** file.
+2. I set it to run daily at 4 am. You can change the time it runs in **local.sync.plist** file.
 ```
 <key>StartCalendarInterval</key>
   <dict>
@@ -39,25 +43,21 @@ end tell
       <integer>0</integer>
   </dict>
 ```
-
-# Automation
-Because I want to automatically sync bookmarks every night, but at this point my mac's lid is closed. The [cron](https://en.wikipedia.org/wiki/Cron) is unusable when the lid is closed. Therefore, I decided to use [launchd](https://medium.com/swlh/how-to-use-launchd-to-run-services-in-macos-b972ed1e352) to do the automation.
-
-1. Move the **local.sync.plist** file to **/Users/<your_user_name>/Library/LaunchAgents**.
-2. Run this line in the terminal to get **your-user-id**
+3. Move the **local.sync.plist** file to **/Users/<your_user_name>/Library/LaunchAgents**.
+4. Run this line in the terminal to get **your-user-id**
 ```
 id -u
 ```
-3. Then run this line to move to the LaunchAgents folder:
+5. Then run this line to move to the LaunchAgents folder:
 ```
 cd ~/Library/LaunchAgents/
 ```
-4. We can now load our agent by executing the following command:
+6. We can now load our agent by executing the following command:
 ```
 launchctl bootstrap gui/<your-user-id> local.sync.plist
 ```
-5. Now everything is ok.
-5. If you want to modify the files, remember to unload the agent and then load it:
+7. Now everything is ok.
+8. If you want to modify the files, remember to unload the agent and then load it:
 ```
 launchctl bootout gui/<your-user-id> local.sync.plist
 ```
