@@ -6,7 +6,7 @@ Bookmarks imported from chrome to safari will only add new bookmarks, but will n
 
 # Solution
 - This script first resets safari bookmarks to empty, and then imports bookmarks, passwords and history from chrome.
-- I assumed the maximum number of bookmarks to delete in the root directory is 20, but you can modify it in **sync-from-chrome-to-safari.scpt** file.
+- I assumed the maximum number of bookmarks to delete in the root directory is **20**, but you can modify it in **sync-from-chrome-to-safari.scpt** file.
 ```
 repeat 20 times -- assume at most 20 bookmarks
 	key code 125
