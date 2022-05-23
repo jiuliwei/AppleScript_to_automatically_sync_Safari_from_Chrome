@@ -3,16 +3,23 @@
 -- wake the computer
 do shell script "caffeinate -u -t 3"
 tell application "System Events"
-	keystroke "<your_password>"
+	delay 2
+	keystroke "weijn"
 	keystroke return
 end tell
+
+delay 1
 
 -- close google chrome to perform importing 
 do shell script "killall \"Google Chrome\" || echo \"Google Chrome is not running.\""
 
+delay 1
+
 -- open safari
 do shell script "killall Safari || echo \"Safari is not running.\""
 tell application "Safari" to activate
+
+delay 1
 
 -- reset the bookmarks to empty
 tell application "System Events" to tell application process "Safari"
@@ -23,6 +30,7 @@ tell application "System Events" to tell application process "Safari"
 	click menu item "Edit Bookmarks" of menu 1 of menu bar item "Bookmarks" of menu bar 1
 	delay 2
 	click UI Element 3 of UI Element 1 of row 1 of outline 1 of scroll area 1 of group 1 of tab group 1 of splitter group 1 of window "Bookmarks"
+	delay 1
 	
 	-- delete all bookmarks
 	keystroke "f"
@@ -60,9 +68,12 @@ delay 3
 -- wake the computer
 do shell script "caffeinate -u -t 3"
 tell application "System Events"
-	keystroke "<your_password>"
+	delay 1
+	keystroke "weijn"
 	keystroke return
 end tell
+
+delay 1
 
 -- open safari
 tell application "Safari" to activate
@@ -80,8 +91,12 @@ tell application "System Events" to tell application process "Safari"
 	log "Complete sync"
 end tell
 
+delay 1
+
 -- close safari
 tell application "Safari" to quit
+
+delay 1
 
 -- sleep
 tell application "Finder" to sleep
