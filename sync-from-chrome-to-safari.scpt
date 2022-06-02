@@ -4,7 +4,7 @@
 do shell script "caffeinate -u -t 3"
 tell application "System Events"
 	delay 2
-	keystroke "your-password"
+	keystroke "<your_password>"
 	keystroke return
 end tell
 
@@ -69,7 +69,7 @@ delay 3
 do shell script "caffeinate -u -t 3"
 tell application "System Events"
 	delay 1
-	keystroke "your-password"
+	keystroke "<your_password>"
 	keystroke return
 end tell
 
