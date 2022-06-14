@@ -17,6 +17,9 @@ delay 1
 
 -- open safari
 do shell script "killall Safari || echo \"Safari is not running.\""
+
+delay 1
+
 tell application "Safari" to activate
 
 delay 1
@@ -46,13 +49,13 @@ tell application "System Events" to tell application process "Safari"
 end tell
 
 -- close safari
-tell application "Safari" to quit
+do shell script "killall Safari"
 delay 2
 
 -- reopen safari to make sure bookmarks is empty
 tell application "Safari" to activate
 delay 2
-tell application "Safari" to quit
+do shell script "killall Safari"
 delay 2
 
 -- sleep
@@ -68,12 +71,12 @@ delay 3
 -- wake the computer
 do shell script "caffeinate -u -t 3"
 tell application "System Events"
-	delay 1
+	delay 3
 	keystroke "<your_password>"
 	keystroke return
 end tell
 
-delay 1
+delay 2
 
 -- open safari
 tell application "Safari" to activate
@@ -83,18 +86,18 @@ tell application "System Events" to tell application process "Safari"
 	delay 2
 	log "Syncing..."
 	click menu item 1 of menu 1 of menu item "Import From" of menu 1 of menu bar item "File" of menu bar 1
-	delay 2
+	delay 5
 	click UI Element "Import" of sheet 1 of window "Start Page"
-	delay 5
+	delay 10
 	click UI Element "OK" of sheet 1 of window "Start Page"
-	delay 5
+	delay 10
 	log "Complete sync"
 end tell
 
 delay 1
 
 -- close safari
-tell application "Safari" to quit
+do shell script "killall Safari"
 
 delay 1
 
