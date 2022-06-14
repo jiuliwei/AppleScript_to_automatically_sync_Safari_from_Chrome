@@ -12,6 +12,7 @@ delay 1
 
 -- close google chrome to perform importing 
 do shell script "killall \"Google Chrome\" || echo \"Google Chrome is not running.\""
+
 delay 1
 
 -- open safari
@@ -46,6 +47,7 @@ end tell
 
 -- close safari
 do shell script "killall Safari"
+
 delay 2
 
 -- reopen safari to make sure bookmarks is empty
@@ -56,6 +58,7 @@ delay 2
 
 -- sleep
 tell application "Finder" to sleep
+
 delay 3
 
 
@@ -81,6 +84,7 @@ tell application "Safari" to activate
 tell application "System Events" to tell application process "Safari"
 	delay 2
 	log "Syncing..."
+
 	click menu item 1 of menu 1 of menu item "Import From" of menu 1 of menu bar item "File" of menu bar 1
 	delay 5
 	click UI Element "Import" of sheet 1 of window "Start Page"
