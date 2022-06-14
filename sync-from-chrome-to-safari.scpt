@@ -12,16 +12,12 @@ delay 1
 
 -- close google chrome to perform importing 
 do shell script "killall \"Google Chrome\" || echo \"Google Chrome is not running.\""
-
 delay 1
 
 -- open safari
 do shell script "killall Safari || echo \"Safari is not running.\""
-
 delay 1
-
 tell application "Safari" to activate
-
 delay 1
 
 -- reset the bookmarks to empty
