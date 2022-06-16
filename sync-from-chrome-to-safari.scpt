@@ -86,11 +86,11 @@ tell application "System Events" to tell application process "Safari"
 	log "Syncing..."
 
 	click menu item 1 of menu 1 of menu item "Import From" of menu 1 of menu bar item "File" of menu bar 1
-	delay 3
+	delay 2
 	click UI Element "Import" of sheet 1 of window "Start Page"
-	delay 10
+	delay 7
 	click UI Element "OK" of sheet 1 of window "Start Page"
-	delay 10
+	delay 5
 	log "Complete sync"
 end tell
 
