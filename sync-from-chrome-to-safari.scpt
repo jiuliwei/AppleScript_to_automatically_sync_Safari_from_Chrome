@@ -11,12 +11,12 @@ end tell
 delay 1
 
 -- close google chrome to perform importing 
-do shell script "killall \"Google Chrome\" || echo \"Google Chrome is not running.\""
+tell application "Google Chrome" to quit
 
 delay 1
 
 -- open safari
-do shell script "killall Safari || echo \"Safari is not running.\""
+tell application "Safari" to quit
 delay 1
 tell application "Safari" to activate
 delay 1
@@ -42,18 +42,18 @@ tell application "System Events" to tell application process "Safari"
 	key up {shift}
 	delay 1
 	key code 51
-	delay 3
+	delay 5
 end tell
 
 -- close safari
-do shell script "killall Safari"
+tell application "Safari" to quit
 
 delay 2
 
 -- reopen safari to make sure bookmarks is empty
 tell application "Safari" to activate
-delay 2
-do shell script "killall Safari"
+delay 3
+tell application "Safari" to quit
 delay 2
 
 -- sleep
@@ -86,7 +86,7 @@ tell application "System Events" to tell application process "Safari"
 	log "Syncing..."
 
 	click menu item 1 of menu 1 of menu item "Import From" of menu 1 of menu bar item "File" of menu bar 1
-	delay 2
+	delay 3
 	click UI Element "Import" of sheet 1 of window "Start Page"
 	delay 7
 	click UI Element "OK" of sheet 1 of window "Start Page"
@@ -97,7 +97,7 @@ end tell
 delay 1
 
 -- close safari
-do shell script "killall Safari"
+tell application "Safari" to quit
 
 delay 1
 
