@@ -52,7 +52,7 @@ delay 2
 
 -- reopen safari to make sure bookmarks is empty
 tell application "Safari" to activate
-delay 3
+delay 5
 tell application "Safari" to quit
 delay 2
 
